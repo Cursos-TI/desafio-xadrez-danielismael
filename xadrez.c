@@ -4,7 +4,6 @@ int main() {
     // ----------------------
     // Simulação do movimento da TORRE
     // ----------------------
-    // A Torre vai se mover 5 casas para a direita
     int movimentosTorre = 5;
 
     printf("Movimento da Torre:\n");
@@ -15,7 +14,6 @@ int main() {
     // ----------------------
     // Simulação do movimento do BISPO
     // ----------------------
-    // O Bispo vai se mover 5 casas na diagonal (Cima + Direita)
     int movimentosBispo = 5;
     int contadorBispo = 0;
 
@@ -28,7 +26,6 @@ int main() {
     // ----------------------
     // Simulação do movimento da RAINHA
     // ----------------------
-    // A Rainha vai se mover 8 casas para a esquerda
     int movimentosRainha = 8;
     int contadorRainha = 0;
 
@@ -38,6 +35,29 @@ int main() {
         contadorRainha++;
     } while (contadorRainha < movimentosRainha);
 
+    // ----------------------
+    // Simulação do movimento do CAVALO
+    // ----------------------
+    // O Cavalo se move em "L": duas casas para baixo e uma para a esquerda.
+    // Usamos um loop for externo (para as duas casas para baixo)
+    // e um loop while interno (para a casa à esquerda)
+
+    int movimentosVerticais = 2; // duas casas para baixo
+    int movimentosHorizontais = 1; // uma casa para a esquerda
+
+    printf("\nMovimento do Cavalo:\n");
+
+    // Loop externo (for): duas casas para baixo
+    for (int i = 0; i < movimentosVerticais; i++) {
+        printf("Baixo\n");
+        // Loop interno (while): só entra após cada movimento para baixo
+        int j = 0;
+        while (j < movimentosHorizontais && i == movimentosVerticais - 1) {
+            // Só move para a esquerda após os dois movimentos para baixo
+            printf("Esquerda\n");
+            j++;
+        }
+    }
+
     return 0;
 }
-
